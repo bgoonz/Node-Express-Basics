@@ -125,3 +125,10 @@ app.use( ( req, res, next ) => {
 ```
 
 next refers to the next middlewhere function you want to funnel your reques through... the only middlewhere that shouldn't have a next is the final one that issues a response to the client.
+
+
+---
+
+### Advantages of Express.js
+
+
