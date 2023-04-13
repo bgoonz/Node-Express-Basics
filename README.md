@@ -1,42 +1,40 @@
 # Node-Express-Basics
 
-
 ##### What is Node.js?
+
 - A host enviorment (runtime) for executing JavaScript code
 - V8 engine from Chrome is used for node but it adds some apis (like file system) to it and removes some apis (like DOM).
-
 
 **File System API**
 
 - **fs.writeFile()** _is an asynchronous function_
   - Takes the name of the file we wish to write to as the first argument, the data we wish to write as the second argument, and a callback function as the third argument which takes an error object as an argument which is null if no error occurs.
 
->Ex.
+> Ex.
+
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
-const userName = 'Bryan';
+const userName = "Bryan";
 
-fs.writeFile('user-data.txt', 'Name: ' + userName, (err) => {
+fs.writeFile("user-data.txt", "Name: " + userName, (err) => {
   if (err) {
     console.log(err);
     return;
   }
-  console.log('WROTE FILE');
+  console.log("WROTE FILE");
 });
-
-
 ```
 
-
 **HTTP Module**
+
 - **http.createServer()** _is a function that creates a new server_
   - Takes a callback function as an argument which takes two arguments, a request object and a response object.
   - The request object contains information about the incoming request, such as the url, headers, etc.
   - The response object contains methods for sending a response back to the client, such as write() and end().
 
-
 **For the following code**
+
 ```javascript
 const http = require("http");
 
@@ -57,7 +55,6 @@ const server = http.createServer((request, response) => {
 });
 //listen method will spin up a server
 server.listen(5000); //local server on your machine
-
 ```
 
 - When we open the browser to localhost:5000, we will see the response "Sucess!" in the browser
@@ -106,12 +103,8 @@ REQUEST METHOD: GET
 }
 ```
 
-
 **NOTE: when you change your code you need to restart the server to see the changes in the browser!!!**
-
 
 ---
 
 ## Express.js
-
-

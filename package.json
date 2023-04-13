@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/bgoonz/Node-Express-Basics/issues"
   },
-  "homepage": "https://github.com/bgoonz/Node-Express-Basics#readme"
+  "homepage": "https://github.com/bgoonz/Node-Express-Basics#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
