@@ -108,3 +108,20 @@ REQUEST METHOD: GET
 ---
 
 ## Express.js
+
+
+**Core philosophy ... every incomming express is funneled through a series of middleware functions**
+
+> you can only send one response per request... so middlewhere is used to modufy the request or response object before it is sent back to the client.
+
+
+**Middleware**
+```js
+app.use( ( req, res, next ) => { 
+    
+    
+} );
+
+```
+
+next refers to the next middlewhere function you want to funnel your reques through... the only middlewhere that shouldn't have a next is the final one that issues a response to the client.
