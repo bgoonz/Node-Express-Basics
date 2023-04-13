@@ -1,11 +1,19 @@
-const fs = require('fs');
+const http = require("http");
 
-const userName = 'Bryan';
+const server = http.createServer((request, response) => {
+  console.log("incomming request");
+  console.log(
+    "REQUEST METHOD:",
+    request.method,
+    "\n",
+    "REQUEST URL:",
+    request.url,
+    "\n",
+    "REQUEST HEADERS:",
+    request.headers
+  );
 
-fs.writeFile('user-data.txt', 'Name: ' + userName, (err) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-  console.log('WROTE FILE');
+  response.end("<h1>Sucess!</h1>");
 });
+//listen method will spin up a server
+server.listen(5000); //local server on your machine
