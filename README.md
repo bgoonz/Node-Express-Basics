@@ -132,3 +132,36 @@ next refers to the next middlewhere function you want to funnel your reques thro
 ### Advantages of Express.js
 
 
+```js
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post("/user", (req, res, next) => {
+  res.send("<h1>User: " + req.body.username + "</h1>");
+});
+
+app.get("/", (req, res, next) => {
+  res.send(
+    '<form action="/user" method="POST"><input type="text" name="username"><button type="submit">Create User</button></form>'
+  );
+});
+
+app.listen(5000);
+
+```
+
+- in the code above: when we start nodemon the entire file is parsed and exicuted.
+- the app.use,post and get methods are all initialized but the middlewhere and routes are not executed until a request is made to the server.
+- The middlewhere functions in each of the above methods are callback functions that are only invoked once a request is made to the server that matches the criteria of the method and path.
+
+
+
+Official Node.js Docs: https://nodejs.org/en/docs/
+
+Official Express.js Docs: https://expressjs.com/
+
+Further Node + Express Resources: https://academind.com/learn/node-js/
